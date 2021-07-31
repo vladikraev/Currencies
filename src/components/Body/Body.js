@@ -87,16 +87,3 @@ const Body = () => {
 }
 
 export default Body
-
-
-
-// if (counter <= 20) {
-//   const increaseRates = setInterval(() => {
-//     incr()
-//     console.log('up');
-//   }, 1000);
-
-//   return () => {
-//     clearInterval(increaseRates)
-//   }
-// }
