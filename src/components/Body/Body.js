@@ -33,7 +33,7 @@ const Body = () => {
         setTotalTime(totalTime - 1)
         console.log('up')
 
-      }, 1000);
+      }, 5000);
 
       return () => {
         clearInterval(increaseCounter)
@@ -50,7 +50,7 @@ const Body = () => {
         if (counter == 2) {
           setIncrease(true)
         }
-      }, 1000);
+      }, 5000);
 
       return () => {
         clearInterval(decreaseCounter)
