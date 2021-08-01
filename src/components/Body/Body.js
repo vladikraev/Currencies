@@ -9,6 +9,7 @@ const Body = () => {
   const [counter, setCounter] = useState(1);
   const [increase, setIncrease] = useState(true)
   const [totalTime, setTotalTime] = useState(12 * 5)
+  const [color, setColor] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +33,7 @@ const Body = () => {
         incr()
         setTotalTime(totalTime - 1)
         console.log('up')
-
+        setColor('green')
       }, 5000);
 
       return () => {
@@ -47,6 +48,7 @@ const Body = () => {
         decr()
         setTotalTime(totalTime - 1)
         console.log('down')
+        setColor('red')
         if (counter == 2) {
           setIncrease(true)
         }
@@ -73,15 +75,23 @@ const Body = () => {
   }
 
   return (
-    <div>
-      <div>EURO / AUSTRALIAN DOLLAR</div>
-      <div className={euraud}>{euraud}</div>
-      <div>EURO / U.S. DOLLAR</div>
-      <div className={eurusd}>{eurusd}</div>
-      <div>URO / BRITISH POUND</div>
-      <div className={eurgbp}>{eurgbp}</div>
-      <div>EURO / BULGARIAN LEV</div>
-      <div className={eurbgn}>{eurbgn}</div>
+    <div className={style.allRates}>
+      <div className={style.divSingleRate}>
+        <div>EURO / AUSTRALIAN DOLLAR</div>
+        <div className={style.rates} style={{ backgroundColor: color }}>{euraud}</div>
+      </div>
+      <div className={style.divSingleRate}>
+        <div>EURO / U.S. DOLLAR</div>
+        <div className={style.rates} style={{ backgroundColor: color }}>{eurusd}</div>
+      </div>
+      <div className={style.divSingleRate}>
+        <div>URO / BRITISH POUND</div>
+        <div className={style.rates} style={{ backgroundColor: color }}>{eurgbp}</div>
+      </div>
+      <div className={style.divSingleRate}>
+        <div>EURO / BULGARIAN LEV</div>
+        <div className={style.rates} style={{ backgroundColor: color }}>{eurbgn}</div>
+      </div>
     </div>
   )
 }

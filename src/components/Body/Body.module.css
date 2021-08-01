@@ -1,7 +1,16 @@
-.increaseRates {
-  background-color: green;
+.rates {
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 2px 7px;
 }
 
-.decreaseRates{
-  background-color: red;
+.allRates {
+  display: flex;
+  flex-direction: column;
+}
+
+.divSingleRate {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 }
